@@ -12,10 +12,23 @@
     # A function that provides a system-specific Nixpkgs for the desired systems
     forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
       pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+      system = system;
     });
   in {
-    packages = forAllSystems ({ pkgs }: {
+    packages = forAllSystems ({ pkgs, ... }: {
       default = pkgs.callPackage ./default.nix {};
+    });
+    apps = forAllSystems ({ system, ... }: {
+      isle = {
+        type = "app";
+        program = "${self.packages.${system}.default}/bin/isle";
+        meta.description = "Run Lego Island natively (cd neccesary)";
+      };
+      config = {
+        type = "app";
+        program = "${self.packages.${system}.default}/bin/config";
+        meta.description = "Configure your protable Lego Island installation";
+      };
     });
   };
 }
