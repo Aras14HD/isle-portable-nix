@@ -13,12 +13,12 @@
 
 stdenv.mkDerivation {
   pname = "isle-portable";
-  version = "0.0.1";
+  version = "0.0.2";
 
   src = fetchgit {
     url = "https://github.com/isledecomp/isle-portable.git";
-    rev = "0c66273c9fc65ef2df598b1f20ab16a2d01e0258";
-    sha256 = "sha256-P2wpzV+SHhEuA1LWsbWPMjYCSsmTrbSrb7N1IKWAHpQ=";
+    rev = "7c91a14875751ca1c3571ae35825040000178129";
+    sha256 = "sha256-hR21TIJc4lzioigvJb4L+/CkQob9f5lVqRNMYDsbjZk=";
     fetchSubmodules = true;
   };
 
