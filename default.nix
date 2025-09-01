@@ -17,8 +17,8 @@ stdenv.mkDerivation {
 
   src = fetchgit {
     url = "https://github.com/isledecomp/isle-portable.git";
-    rev = "f2b6188d898256b041c9c3f843f4e12e3b465698";
-    sha256 = "sha256-ASLjeek5zRZG21ydqOsO3300KdIwFwVGYKo+pbrweUQ=";
+    rev = "78ee45296bb0b465c42f15eda3d4537564579a76";
+    sha256 = "sha256-RXZte9lQyUl3ymMEvj4Uyl7eBdnW9dyTwa5aKw138mw=";
     fetchSubmodules = true;
   };
 
